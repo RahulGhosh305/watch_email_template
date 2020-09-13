@@ -60,7 +60,7 @@
         .wrapper {
             width: 100%;
             table-layout: fixed;
-            /* padding-bottom: 40px; */
+            padding-bottom: 40px;
             background-color: #ebf1f1;
         }
 
@@ -129,6 +129,27 @@
             font-size: 15px;
             line-height: 20px;
         }
+
+
+        /* media query */
+        @media screen and (max-width:601px) {
+            .card-third-img {
+                width: 200px !important;
+                max-width: 200px !important;
+            }
+
+            /* .padding {
+                padding-right: 0px !important;
+                padding-left: 0px !important;
+            } */
+        }
+
+        @media screen and (max-width:400px) {
+            .card-one-two {
+                width: 200px !important;
+                max-width: 200px !important;
+            }
+        }
     </style>
 </head>
 <main class="wrapper">
@@ -137,10 +158,14 @@
             <!-- logo picture -->
             <tr>
                 <td>
-                    <table style="border-collapse: collapse; width: 100%">
-                        <tr style="background-color:#cc6257; width: 100%; height: 60px;">
+                    <table style="border-collapse: collapse; width: 100%;">
+                        <tr style="background-color:#D67716C9; width: 100%;">
                             <td>
-                                <img src="image/logo1.jpg" alt="logo">
+                                <img src="image/logo.png" alt="logo" style="height: 160px;">
+                            </td>
+                            <td style="text-align: center; color: #ffffff;">
+                                <h1>Limited Offer Only!</h1>
+                                <p>Hurry up</p>
                             </td>
                         </tr>
                     </table>
@@ -174,8 +199,9 @@
                                                 <tr>
                                                     <td>
                                                         <a href="#">
-                                                            <img src="image/watch2.webp" alt="watch1 picture"
-                                                                width="150px" style="max-width: 150px;">
+                                                            <img class="card-one-two" src="image/watch2.webp"
+                                                                alt="watch1 picture" width="150px"
+                                                                style="max-width: 150px;">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -186,7 +212,7 @@
                                                             consectetur adipisicing elit.
                                                             Laborum ex iusto obcaecati neque hic eaque incidunt magni!
                                                         </p>
-                                                        <a href="#">See more..</a>
+                                                        <button><a href="#">See more..</a></button>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -202,8 +228,9 @@
                                                 <tr>
                                                     <td>
                                                         <a href="#">
-                                                            <img src="image/watch1.webp" alt="watch1 picture"
-                                                                width="150px" style="max-width: 150px;">
+                                                            <img class="card-one-two" src="image/watch1.webp"
+                                                                alt="watch1 picture" width="150px"
+                                                                style="max-width: 150px;">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -214,7 +241,7 @@
                                                             consectetur adipisicing elit.
                                                             Laborum ex iusto obcaecati neque hic eaque incidunt magni!
                                                         </p>
-                                                        <a href="#">See more..</a>
+                                                        <button><a href="#">See more..</a></button>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -231,8 +258,9 @@
                                                 <tr>
                                                     <td>
                                                         <a href="#">
-                                                            <img src="image/watch.webp" alt="watch1 picture"
-                                                                width="150px" style="max-width: 150px;">
+                                                            <img class="card-third-img" src="image/watch.webp"
+                                                                alt="watch1 picture" width="150px"
+                                                                style="max-width: 150px;">
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -243,7 +271,7 @@
                                                             consectetur adipisicing elit.
                                                             Laborum ex iusto obcaecati neque hic eaque incidunt magni!
                                                         </p>
-                                                        <a href="#">See more..</a>
+                                                        <Button><a href="#">See more..</a></Button>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -263,7 +291,7 @@
                     <table style="border-collapse: collapse;width: 100%;">
 
                         <tr>
-                            <td style="background-color: #cc6257; padding: 15px; text-align: center;">
+                            <td style="background-color: #D67716C9; padding: 15px; text-align: center;">
 
                                 <p style="color: #ffffff; font-size: 18px; text-align: center; margin-bottom: 15px;">
                                     Connect with us</p>
@@ -279,6 +307,40 @@
                             </td>
                         </tr>
 
+                    </table>
+                </td>
+            </tr>
+
+            <!-- Address part -->
+            <tr>
+                <td style="background-color: #ffffff;">
+                    <table style="border-collapse: collapse; width: 100%; padding-bottom: 10px;">
+                        <tr>
+                            <td style="padding: 20px; text-align: center;">
+
+                                <a href="@"><img src="" alt="" width=""></a>
+
+                                <h3 style="font-size: 16px; margin-bottom: 10px;">Watch park</h3>
+                                <p style="font-size: 16px; margin-bottom: 10px;">Kandirpar,Ram-mala road,56 building</p>
+                                <p style="margin-bottom: 10px;"><a href="mailto:rahulghosh096@gmail.com"
+                                        style="color: blue;">rahulghosh096@gmail.com</a></p>
+
+
+                                <p style="margin-bottom: 10px;"><a href="tel:01675940305"
+                                        style="color: blue;">01675-940305</a></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding-bottom: 20px; text-align: center;">
+                                <p style="margin-bottom: 10px;"><a href="#"
+                                        style="color: blue; font-size: 13px;">UNSUBCRIBE</a></p>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td style="height: 30px; background-color: #D67716C9;"></td>
+                        </tr>
                     </table>
                 </td>
             </tr>
