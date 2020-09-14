@@ -1,355 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="Author" content="Rahul Ghosh">
-    <meta name="reserved" content="13/9/2020">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="Author" content="Rahul Ghosh" />
+    <meta name="reserved" content="13/9/2020" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Template</title>
 
     <!-- Internal CSS -->
     <style>
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #ebf1f1;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ebf1f1;
+      }
 
-        td {
-            padding: 0px;
-        }
+      td {
+        padding: 0px;
+      }
 
-        img {
-            padding: 0px;
-            display: block;
-        }
+      img {
+        padding: 0px;
+        display: block;
+      }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        margin: 0;
+      }
 
-            margin: 0;
-        }
+      button {
+        border: 1px solid rgb(100, 42, 15);
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgb(182, 62, 6);
+      }
 
-        button {
-            border: 1px solid rgb(100, 42, 15);
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 20px;
-            background-color: rgb(182, 62, 6);
-        }
+      button a {
+        color: #ffffff;
+      }
 
-        button a {
-            color: #ffffff;
-        }
+      button:hover {
+        background-color: rgb(110, 58, 33);
+      }
 
-        button:hover {
-            background-color: rgb(110, 58, 33);
-        }
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        padding-bottom: 40px;
+        background-color: #ebf1f1;
+      }
 
-        .wrapper {
-            width: 100%;
-            table-layout: fixed;
-            padding-bottom: 40px;
-            background-color: #ebf1f1;
-        }
+      .webkit {
+        margin: 0 auto;
+        max-width: 600px;
+        background-color: #ffffff;
+      }
 
-        .webkit {
-            margin: 0 auto;
-            max-width: 600px;
-            background-color: #ffffff;
-        }
+      .outer {
+        width: 100%;
+        max-width: 600px;
+        border-spacing: 0;
+        font-family: sans-serif;
+        color: #4a4a4a;
+        text-align: center;
+      }
 
-        .outer {
-            width: 100%;
-            max-width: 600px;
-            border-spacing: 0;
-            font-family: sans-serif;
-            color: #4a4a4a;
-            text-align: center;
-        }
+      .coverpic {
+        background-image: url("image/coverphoto1.jpg");
+        width: 100%;
+        height: 350px;
+        background-size: cover;
+        max-width: 100%;
+      }
 
-        .coverpic {
-            background-image: url('image/coverphoto1.jpg');
-            width: 100%;
-            height: 350px;
-            background-size: cover;
-            max-width: 100%;
-        }
+      .content-wrapper h1 {
+        font-size: 30px;
+        color: rgb(204, 31, 0);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
 
+      .content-wrapper h3 {
+        color: #ffffff;
+        font-size: 25px;
+      }
 
-        .content-wrapper h1 {
-            font-size: 30px;
-            color: rgb(204, 31, 0);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
+      a {
+        font-size: 15px;
+        text-decoration: none;
+        color: #d1200c;
+      }
 
-        .content-wrapper h3 {
-            color: #ffffff;
-            font-size: 25px;
-        }
+      /* card design */
+      .three-card-col {
+        text-align: center;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        font-size: 0px;
+      }
 
-        a {
-            font-size: 15px;
-            text-decoration: none;
-            color: #d1200c;
-        }
+      .three-card-col .col {
+        width: 100%;
+        max-width: 200px;
+        display: inline-block;
+        vertical-align: top;
+      }
 
-        /* card design */
-        .three-card-col {
-            text-align: center;
-            padding-top: 40px;
-            padding-bottom: 30px;
-            font-size: 0px;
-        }
+      .padding {
+        padding: 15px;
+      }
 
-        .three-card-col .col {
-            width: 100%;
-            max-width: 200px;
-            display: inline-block;
-            vertical-align: top;
+      .three-card-col .content {
+        font-size: 15px;
+        line-height: 20px;
+      }
+
+      /* media query */
+      @media screen and (max-width: 600px) {
+        .card-third-img {
+          width: 200px !important;
+          max-width: 200px !important;
         }
 
         .padding {
-            padding: 15px;
+          padding-right: 0px !important;
+          padding-left: 0px !important;
         }
+      }
 
-        .three-card-col .content {
-            font-size: 15px;
-            line-height: 20px;
+      @media screen and (max-width: 400px) {
+        .card-one-two {
+          width: 200px !important;
+          max-width: 200px !important;
         }
-
-
-        /* media query */
-        @media screen and (max-width:600px) {
-            .card-third-img {
-                width: 200px !important;
-                max-width: 200px !important;
-            }
-
-            /* .padding {
-                padding-right: 0px !important;
-                padding-left: 0px !important;
-            } */
-        }
-
-        @media screen and (max-width:400px) {
-            .card-one-two {
-                width: 200px !important;
-                max-width: 200px !important;
-            }
-        }
+      }
     </style>
-</head>
-<main class="wrapper">
+  </head>
+  <main class="wrapper">
     <div class="webkit">
-        <table class="outer" style="border-collapse: collapse; width: 100%">
-            <!-- logo picture -->
-            <tr>
+      <table class="outer" style="border-collapse: collapse; width: 100%">
+        <!-- logo picture -->
+        <tr>
+          <td>
+            <table style="border-collapse: collapse; width: 100%">
+              <tr style="background-color: #d67716c9; width: 100%">
                 <td>
-                    <table style="border-collapse: collapse; width: 100%;">
-                        <tr style="background-color:#D67716C9; width: 100%;">
+                  <img src="image/logo.png" alt="logo" style="height: 160px" />
+                </td>
+                <td style="text-align: center; color: #ffffff">
+                  <h1>Limited Offer Only!</h1>
+                  <p>Hurry up</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- cover picture -->
+        <tr>
+          <td>
+            <table style="border-collapse: collapse; width: 100%">
+              <tr class="content">
+                <td class="coverpic content-wrapper">
+                  <h1>50% Spcial Offer On Festible</h1>
+                  <h3>The latest from our business.</h3>
+                  <button>
+                    <a href="#"><b>see more...</b></a>
+                  </button>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Card offer -->
+        <tr>
+          <td>
+            <table style="border-collapse: collapse; width: 100%">
+              <tr>
+                <td class="three-card-col">
+                  <!-- 1st card -->
+                  <table
+                    class="col"
+                    style="border-collapse: collapse; width: 100%"
+                  >
+                    <tr>
+                      <td class="padding">
+                        <table
+                          class="content"
+                          style="border-collapse: collapse; width: 100%"
+                        >
+                          <tr>
                             <td>
-                                <img src="image/logo.png" alt="logo" style="height: 160px;">
+                              <a href="#">
+                                <img
+                                  class="card-one-two"
+                                  src="image/watch2.webp"
+                                  alt="watch1 picture"
+                                  width="150px"
+                                  style="max-width: 150px"
+                                />
+                              </a>
                             </td>
-                            <td style="text-align: center; color: #ffffff;">
-                                <h1>Limited Offer Only!</h1>
-                                <p>Hurry up</p>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10px">
+                              <h4 style="font-size: 17px; font-weight: bold">
+                                Model - CF25
+                              </h4>
+                              <p style="margin-bottom: 15px">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Laborum ex iusto obcaecati
+                                neque hic eaque incidunt magni!
+                              </p>
+                              <button><a href="#">See more..</a></button>
                             </td>
-                        </tr>
-                    </table>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- 2nd card -->
+                  <table
+                    class="col"
+                    style="border-collapse: collapse; width: 100%"
+                  >
+                    <tr>
+                      <td class="padding">
+                        <table
+                          class="content"
+                          style="border-collapse: collapse; width: 100%"
+                        >
+                          <tr>
+                            <td>
+                              <a href="#">
+                                <img
+                                  class="card-one-two"
+                                  src="image/watch1.webp"
+                                  alt="watch1 picture"
+                                  width="150px"
+                                  style="max-width: 150px"
+                                />
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10px">
+                              <h4 style="font-size: 17px; font-weight: bold">
+                                Model - DD50
+                              </h4>
+                              <p style="margin-bottom: 15px">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Laborum ex iusto obcaecati
+                                neque hic eaque incidunt magni!
+                              </p>
+                              <button><a href="#">See more..</a></button>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- 3rd card -->
+
+                  <table
+                    class="col"
+                    style="border-collapse: collapse; width: 100%"
+                  >
+                    <tr>
+                      <td class="padding">
+                        <table
+                          class="content"
+                          style="border-collapse: collapse; width: 100%"
+                        >
+                          <tr>
+                            <td>
+                              <a href="#">
+                                <img
+                                  class="card-third-img"
+                                  src="image/watch.webp"
+                                  alt="watch1 picture"
+                                  width="150px"
+                                  style="max-width: 150px"
+                                />
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="padding: 10px">
+                              <h4 style="font-size: 17px; font-weight: bold">
+                                Model - C409
+                              </h4>
+                              <p style="margin-bottom: 15px">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Laborum ex iusto obcaecati
+                                neque hic eaque incidunt magni!
+                              </p>
+                              <button><a href="#">See more..</a></button>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
                 </td>
-            </tr>
-            <!-- cover picture -->
-            <tr>
-                <td>
-                    <table style="border-collapse: collapse; width: 100%">
-                        <tr class="content">
-                            <td class="coverpic content-wrapper">
-                                <h1>50% Spcial Offer On Festible</h1>
-                                <h3>The latest from our business.</h3>
-                                <button><a href="#"><b>see more...</b></a></button>
-                            </td>
-                        </tr>
-                    </table>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Footer Part -->
+
+        <tr>
+          <td>
+            <table style="border-collapse: collapse; width: 100%">
+              <tr>
+                <td
+                  style="
+                    background-color: #d67716c9;
+                    padding: 15px;
+                    text-align: center;
+                  "
+                >
+                  <p
+                    style="
+                      color: #ffffff;
+                      font-size: 18px;
+                      text-align: center;
+                      margin-bottom: 15px;
+                    "
+                  >
+                    Connect with us
+                  </p>
+
+                  <a href="#" style="display: inline-block"
+                    ><img
+                      src="image/facebook-new.png"
+                      alt="facebook icon"
+                      width="30px"
+                  /></a>
+                  <a href="#" style="display: inline-block"
+                    ><img
+                      src="image/linkedin.png"
+                      alt="Linkedin icon"
+                      width="30px"
+                  /></a>
+                  <a href="#" style="display: inline-block"
+                    ><img
+                      src="image/google-plus.png"
+                      alt="Google icon"
+                      width="30px"
+                  /></a>
+                  <a href="#" style="display: inline-block"
+                    ><img
+                      src="image/youtube-play.png"
+                      alt="Youtube icon"
+                      width="30px"
+                  /></a>
                 </td>
-            </tr>
-            <!-- Card offer -->
-            <tr>
-                <td>
-                    <table style="border-collapse: collapse; width: 100%">
-                        <tr>
-                            <td class="three-card-col">
-                                <!-- 1st card -->
-                                <table class="col" style="border-collapse: collapse; width: 100%">
-                                    <tr>
-                                        <td class="padding">
-                                            <table class="content" style="border-collapse: collapse; width: 100%">
-                                                <tr>
-                                                    <td>
-                                                        <a href="#">
-                                                            <img class="card-one-two" src="image/watch2.webp"
-                                                                alt="watch1 picture" width="150px"
-                                                                style="max-width: 150px;">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 10px;">
-                                                        <h4 style="font-size: 17px;font-weight: bold">Model - CF25</h4>
-                                                        <p style="margin-bottom: 15px;">Lorem ipsum dolor sit amet
-                                                            consectetur adipisicing elit.
-                                                            Laborum ex iusto obcaecati neque hic eaque incidunt magni!
-                                                        </p>
-                                                        <button><a href="#">See more..</a></button>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
+              </tr>
+            </table>
+          </td>
+        </tr>
 
-                                <!-- 2nd card -->
-                                <table class="col" style="border-collapse: collapse; width: 100%">
-                                    <tr>
-                                        <td class="padding">
-                                            <table class="content" style="border-collapse: collapse; width: 100%">
-                                                <tr>
-                                                    <td>
-                                                        <a href="#">
-                                                            <img class="card-one-two" src="image/watch1.webp"
-                                                                alt="watch1 picture" width="150px"
-                                                                style="max-width: 150px;">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 10px;">
-                                                        <h4 style="font-size: 17px;font-weight: bold">Model - DD50</h4>
-                                                        <p style="margin-bottom: 15px;">Lorem ipsum dolor sit amet
-                                                            consectetur adipisicing elit.
-                                                            Laborum ex iusto obcaecati neque hic eaque incidunt magni!
-                                                        </p>
-                                                        <button><a href="#">See more..</a></button>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
+        <!-- Address part -->
+        <tr>
+          <td style="background-color: #ffffff">
+            <table
+              style="
+                border-collapse: collapse;
+                width: 100%;
+                padding-bottom: 10px;
+              "
+            >
+              <tr>
+                <td style="padding: 20px; text-align: center">
+                  <a href="@"><img src="" alt="" width="" /></a>
 
-                                <!-- 3rd card -->
+                  <h3 style="font-size: 16px; margin-bottom: 10px">
+                    Watch park
+                  </h3>
+                  <p style="font-size: 16px; margin-bottom: 10px">
+                    Kandirpar,Ram-mala road,56 building
+                  </p>
+                  <p style="margin-bottom: 10px">
+                    <a href="mailto:rahulghosh096@gmail.com" style="color: blue"
+                      >rahulghosh096@gmail.com</a
+                    >
+                  </p>
 
-                                <table class="col" style="border-collapse: collapse; width: 100%">
-                                    <tr>
-                                        <td class="padding">
-                                            <table class="content" style="border-collapse: collapse; width: 100%">
-                                                <tr>
-                                                    <td>
-                                                        <a href="#">
-                                                            <img class="card-third-img" src="image/watch.webp"
-                                                                alt="watch1 picture" width="150px"
-                                                                style="max-width: 150px;">
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="padding: 10px;">
-                                                        <h4 style="font-size: 17px;font-weight: bold">Model - C409</h4>
-                                                        <p style="margin-bottom: 15px;">Lorem ipsum dolor sit amet
-                                                            consectetur adipisicing elit.
-                                                            Laborum ex iusto obcaecati neque hic eaque incidunt magni!
-                                                        </p>
-                                                        <Button><a href="#">See more..</a></Button>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
+                  <p style="margin-bottom: 10px">
+                    <a href="tel:01675940305" style="color: blue"
+                      >01675-940305</a
+                    >
+                  </p>
                 </td>
-            </tr>
+              </tr>
 
-            <!-- Footer Part -->
-
-            <tr>
-                <td>
-                    <table style="border-collapse: collapse;width: 100%;">
-
-                        <tr>
-                            <td style="background-color: #D67716C9; padding: 15px; text-align: center;">
-
-                                <p style="color: #ffffff; font-size: 18px; text-align: center; margin-bottom: 15px;">
-                                    Connect with us</p>
-
-                                <a href="#" style="display: inline-block;"><img src="image/facebook-new.png"
-                                        alt="facebook icon" width="30px"></a>
-                                <a href="#" style="display: inline-block;"><img src="image/linkedin.png"
-                                        alt="Linkedin icon" width="30px"></a>
-                                <a href="#" style="display: inline-block;"><img src="image/google-plus.png"
-                                        alt="Google icon" width="30px"></a>
-                                <a href="#" style="display: inline-block;"><img src="image/youtube-play.png"
-                                        alt="Youtube icon" width="30px"></a>
-                            </td>
-                        </tr>
-
-                    </table>
+              <tr>
+                <td style="padding-bottom: 20px; text-align: center">
+                  <p style="margin-bottom: 10px">
+                    <a href="#" style="color: blue; font-size: 13px"
+                      >UNSUBCRIBE</a
+                    >
+                  </p>
                 </td>
-            </tr>
+              </tr>
 
-            <!-- Address part -->
-            <tr>
-                <td style="background-color: #ffffff;">
-                    <table style="border-collapse: collapse; width: 100%; padding-bottom: 10px;">
-                        <tr>
-                            <td style="padding: 20px; text-align: center;">
-
-                                <a href="@"><img src="" alt="" width=""></a>
-
-                                <h3 style="font-size: 16px; margin-bottom: 10px;">Watch park</h3>
-                                <p style="font-size: 16px; margin-bottom: 10px;">Kandirpar,Ram-mala road,56 building</p>
-                                <p style="margin-bottom: 10px;"><a href="mailto:rahulghosh096@gmail.com"
-                                        style="color: blue;">rahulghosh096@gmail.com</a></p>
-
-
-                                <p style="margin-bottom: 10px;"><a href="tel:01675940305"
-                                        style="color: blue;">01675-940305</a></p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="padding-bottom: 20px; text-align: center;">
-                                <p style="margin-bottom: 10px;"><a href="#"
-                                        style="color: blue; font-size: 13px;">UNSUBCRIBE</a></p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td style="height: 30px; background-color: #D67716C9;"></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
+              <tr>
+                <td style="height: 30px; background-color: #d67716c9"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </div>
-</main>
+  </main>
 
-<body>
-
-</body>
-
+  <body></body>
 </html>
